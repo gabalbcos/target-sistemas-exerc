@@ -4,10 +4,123 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resolução exercícios</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Resolução de exercícios</title>
 </head>
 <body>
-    
+    <header>
+        <h1 class="title">Resolução de Exercícios - Target Sistemas</h1>
+    </header>
+    <main>
+        <div class="question-1">
+            <p>1) Observe o trecho de código abaixo: </p>
+                <code>INDICE = 13, SOMA = 0, K = 0;
+                
+                enquanto K < INDICE faça
+                
+                {
+                
+                K = K + 1;
+                
+                SOMA = SOMA + K;
+                
+                }
+                
+                imprimir(SOMA);
+            </code>
+            <p>Ao final do processamento, qual será o valor da variável SOMA?<br>
+                <strong>Resposta:</strong> O valor de SOMA será igual ao valor do índice</p>
+            <label for="soma">Insira o número para ser somado: <input type="number" id="soma"></label><button onclick="somaTudo()">Somar</button>
+                <p class="resultado-soma">Aguardando</p>
+        </div>
+        <div class="question-2">
+            <p>2) Dado a sequência de Fibonacci, onde se inicia por 0 e 1 e o próximo valor sempre será a 
+                soma dos 2 valores anteriores (exemplo: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...),
+                 escreva um programa na linguagem que desejar onde, informado um número,
+                  ele calcule a sequência de Fibonacci e retorne uma mensagem avisando se o número informado pertence ou não a sequência.
+                </p>
+                <label for="numero-fibo">Insira o número para ser verificado: <input type="number" id="numero-fibo"></label><button onclick="checaFibonacci()">Checar se pertence</button>
+                <p class="resultado-fibo">Aguardando</p>
+        </div>
+        <div class="question-3">
+            <p>3) Descubra a lógica e complete o próximo elemento:<br>
+                <br>
+                a) 1, 3, 5, 7, ___<br>
+                <strong>
+                    Lógica = +2<br>
+                    Próximo elemento: 9<br>
+                </strong><br>
+                b) 2, 4, 8, 16, 32, 64, ____<br>
+                <strong>
+                    Lógica = 2**índice<br>
+                    Próximo elemento: 128<br>
+                </strong><br>
+                c) 0, 1, 4, 9, 16, 25, 36, ____<br>
+                <strong>Lógica: número ** número<br></strong>
+                <strong>Pŕoximo elemento: 49<br></strong>
+                <br>
+                d) 4, 16, 36, 64, ____<br>
+                <strong>Lógica = 4 * N</strong><br>
+                Nn-1 = N anterior<br>
+                Nn = N atual<br>
+                <br>
+                N = Nn-1 + ((Nn * 2) - 1)<br>
+                <br>
+                <strong>Próximo elemento: 100</strong><br>
+                <br>
+                Nt = 16 + ((5 * 2) - 1)<br>
+                Nt = 16 + 9 = 25<br>
+                25 * 4 = 100<br>
+                <br>
+                e) 1, 1, 2, 3, 5, 8, ____<br>
+                <strong>Lógica: Fibonacci<br>
+                Próximo elemento: 13</strong><br>
+                <br>
+                f) 2,10, 12, 16, 17, 18, 19, ____<br>
+                <strong>Lógica: Não consegui encontrar lógica matemática, mas no bar disseram que são número que começam com "D"<br>
+                Próximo elemento: 200</strong>
+                </p>
+        </div>
+        <div class="question-4">
+            <p>4 - Dois veículos (um carro e um caminhão) saem respectivamente de cidades opostas pela mesma rodovia. 
+                O carro de Ribeirão Preto em direção a Franca, a uma velocidade constante de 110 km/h e o caminhão de Franca em direção 
+                a Ribeirão Preto a uma velocidade constante de 80 km/h. Quando eles se cruzarem na rodovia, qual estará mais próximo a 
+                cidade de Ribeirão Preto?<br>
+                <br>
+                IMPORTANTE:<br>
+                <br>
+                a) Considerar a distância de 100km entre a cidade de Ribeirão Preto <-> Franca.<br>
+                <br>
+                b) Considerar 2 pedágios como obstáculo e que o caminhão leva 5 minutos a mais para passar em cada um deles e o carro possui tag de pedágio (Sem Parar)
+                <br><br>
+                c) Explique como chegou no resultado.<br>
+                <br>
+                <strong>Resposta:Se os dois se cruzaram, então ocupam a mesma distância na estrada (reta), 
+                assim a distância deles até Ribeirão Preto é a mesma para ambos.
+                Em caso de dúvida, posso testar empiricamente após a contratação.</strong></p>
+        </div>
+        <div class="question-5">
+            <p>5) Escreva um programa que inverta os caracteres de um string.<br>
+                <br>
+                IMPORTANTE:
+                <br><br>
+                a) Essa string pode ser informada através de qualquer entrada de sua preferência ou pode ser previamente definida no código;
+                <br><br>
+                b) Evite usar funções prontas, como, por exemplo, reverse;</p><br>
+                <code>function inverteString(string){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; >let splitString = string.split("");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; let reversedString = [];<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; for (let i = string.length - 1; i > -1; i--){<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;     reversedString.push(splitString[i]);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;  }<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp; return(reversedString.join(""))
+                }</code><br><br>
+                <label for="string-reverso">Insira o string para ser invertido: <input type="text" id="string-reverso"></label><button onclick="inverteString()">Inverter</button>
+                <p class="resultado-string">Aguardando</p>    
+        </div>
+
+    </main>
+
 </body>
 <script src="script.js"></script>   
 </html>

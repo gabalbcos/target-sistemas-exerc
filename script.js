@@ -1,3 +1,9 @@
+/*DOM selection*/
+let resposta1 = document.querySelector('.resultado-soma');
+let resposta2 = document.querySelector('.resultado-fibo');
+let resposta5 = document.querySelector('.resultado-string');
+
+
 /*1) Observe o trecho de código abaixo:
 
 int INDICE = 13, SOMA = 0, K = 0;
@@ -13,12 +19,13 @@ imprimir(SOMA);
 Ao final do processamento, qual será o valor da variável SOMA?
 */
 
-function somaTudo(num){
+function somaTudo(){
+    let somaValor = document.querySelector('#soma').value;
     let somaTotal = 0;
-    for(let i = 0; i < num; i++){
+    for(let i = 0; i < somaValor; i++){
         somaTotal++
     }
-    alert(somaTotal)
+    return resposta1.textContent = somaTotal;
 }
 
 
@@ -27,27 +34,36 @@ soma dos 2 valores anteriores (exemplo: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...),
  escreva um programa na linguagem que desejar onde, informado um número,
   ele calcule a sequência de Fibonacci e retorne uma mensagem avisando se o número informado pertence ou não a sequência.
 */
+
+/*Checa se o número pertence à sequência de Fibonacci*/
+
+function checaFibonacci(){
+    let num = document.querySelector('#numero-fibo').value;
+    let check = calculaFibonacci(num);
+       if (parseInt(check) === parseInt(num)){
+        console.log(check);
+        console.log(num);
+        return resposta2.textContent = `${num} pertence à sequência Fibonacci`;
+    }
+
+    return resposta2.textContent = `${num} não pertence à sequência Fibonacci`;
+}
+
+/*Calcula a sequência até passar ou igual o número escolhido*/
+
 function calculaFibonacci(num){
     let numeroAtual = 1;
-    let numeroPassado = 0;
+    let numeroPassado = 1;
     while (numeroAtual < num || numeroAtual === num){
         let seguraValor = numeroAtual;
         numeroAtual = numeroAtual + numeroPassado;
         numeroPassado = seguraValor;
     }
-    return numeroPassado;
+    return numeroAtual;
 }
 
-
-function checaFibonacci(num){
-    return calculaFibonacci(num) === num;
-}
-
-checaFibonacci()
 
 /*3) Descubra a lógica e complete o próximo elemento:
-
-
 
 a) 1, 3, 5, 7, ___
 Lógica = +2
@@ -102,8 +118,6 @@ Em caso de dúvida, posso testar empiricamente após a contratação.
 
 5) Escreva um programa que inverta os caracteres de um string.
 
-
-
 IMPORTANTE:
 
 a) Essa string pode ser informada através de qualquer entrada de sua preferência ou pode ser previamente definida no código;
@@ -111,16 +125,16 @@ a) Essa string pode ser informada através de qualquer entrada de sua preferênc
 b) Evite usar funções prontas, como, por exemplo, reverse;
 */
 
-function inverteString(string){
+function inverteString(){
+    let string = document.querySelector('#string-reverso').value;
     let splitString = string.split("");
     let reversedString = [];
     for (let i = string.length - 1; i > -1; i--){
         reversedString.push(splitString[i]);
     }
-    console.log(reversedString.join(""))
+    return resposta5.textContent =  reversedString.join("");
 }
 
 inverteString("123456abc")
-
 
 
